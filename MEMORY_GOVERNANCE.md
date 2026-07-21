@@ -33,3 +33,11 @@ Mem0 marcada com `source: governance`.
   não foram criados.
 - Mem0: checkpoint `4a0a9e94-7117-4861-a07d-2b9bff3ca858`, tipo `decision`,
   origem `remember_command`, status `checkpoint_pending_implementation`.
+
+## Checkpoint de execucao — 2026-07-21
+
+- Base Git `31700f0`; feature isolada em `codex/005-transformation-platformer`, worktree `C:\wt-ben10`.
+- T001/T002 concluidas: `@playwright/test` 1.61.1, Chromium, `test:e2e` e `playwright.config.ts` (Vite `127.0.0.1:4173`, Chromium, descoberta em `tests/`). O erro ESM `bun:` deixou de ocorrer. Proximo: T003 e testes reais.
+- `caveman-compress` rejeita UTF-8 invalido, informa o caminho e tem regressao em `.agents/skills/caveman-compress/tests/test_validate.py`.
+- Grafo salvo: 5.137 nos, 4.944 relacoes, 99,9% extraidas e 0,1% inferidas; HTML removido por exceder 5.000 nos.
+- Commits: `f61ddfe` (Playwright), `05930e4` (runner), `118080a` (UTF-8), `f18e714` (grafo canonico) e `4499008` (artefatos Graphify).
