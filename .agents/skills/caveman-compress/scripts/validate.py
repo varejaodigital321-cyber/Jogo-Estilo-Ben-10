@@ -28,7 +28,7 @@ class ValidationResult:
 
 
 def read_file(path: Path) -> str:
-    return path.read_text(errors="ignore")
+    return path.read_text(encoding="utf-8")
 
 
 # ---------- Extractors ----------
@@ -173,8 +173,15 @@ def validate_inline_codes(orig, comp, result):
 def validate(original_path: Path, compressed_path: Path) -> ValidationResult:
     result = ValidationResult()
 
-    orig = read_file(original_path)
-    comp = read_file(compressed_path)
+    contents = []
+    for input_path in (original_path, compressed_path):
+        try:
+            contents.append(read_file(input_path))
+        except UnicodeDecodeError as error:
+            result.add_error(f"UTF-8 decoding failed for {input_path}: {error}")
+            return result
+
+    orig, comp = contents
 
     validate_headings(orig, comp, result)
     validate_code_blocks(orig, comp, result)
