@@ -17,8 +17,8 @@
 
 **Purpose**: preparar o runner de testes exigido pelo projeto sem alterar a experiência jogável.
 
-- [ ] T001 Add `@playwright/test` and the `test:e2e` script in `package.json` and `package-lock.json`, then run `npx.cmd playwright install chromium` before creating browser tests.
-- [ ] T002 Configure the local Vite web server, Chromium project and test directory in `playwright.config.ts`.
+- [x] T001 Add `@playwright/test` and the `test:e2e` script in `package.json` and `package-lock.json`, then run `npx.cmd playwright install chromium` before creating browser tests.
+- [x] T002 Configure the local Vite web server, Chromium project and test directory in `playwright.config.ts`.
 - [ ] T003 [P] Create the test directory layout and shared reset helper in `tests/unit/platformer-state.spec.ts`, `tests/contract/game-test-api.spec.ts` and `tests/e2e/first-level.spec.ts`.
 
 **Checkpoint**: `npm.cmd run test:e2e` has a configured runner, even before feature tests are implemented.
