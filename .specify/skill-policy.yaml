@@ -1,0 +1,102 @@
+version: 2
+phase: foundation
+authority: github/spec-kit
+execution_discipline: obra/superpowers
+automatic: true
+manual_skill_activation_approval_required: false
+spec_kit_artifact_approval_required: true
+
+precedence:
+  scope_and_gates: github/spec-kit
+  execution_method: obra/superpowers
+  conflict_rule: >-
+    Preserve the Spec Kit decision, stop, and record the conflict. No workflow
+    skill may bypass a Spec Kit gate and no approved gate may ignore a matching
+    Superpowers skill.
+
+active:
+  always:
+    - speckit-constitution
+    - speckit-specify
+    - speckit-clarify
+    - speckit-plan
+    - speckit-tasks
+    - speckit-analyze
+    - speckit-checklist
+    - speckit-converge
+    - router
+    - careful
+    - guard
+  project-discovery:
+    - triage
+    - game-ideation
+    - game-direction
+    - pitch-review
+    - game-review
+    - game-eng-review
+    - plan-design-review
+    - architecture-planner
+    - game-import
+    - game-docs
+  quality-foundation:
+    - asset-review
+    - playwright-dev
+    - playwright-devops
+    - playwright-triage
+  execution-discipline:
+    using-superpowers:
+      activation: every_task_start
+    brainstorming:
+      activation: before_creative_or_behavior_change
+    writing-plans:
+      activation: after_approved_spec_for_multistep_work
+    using-git-worktrees:
+      activation: before_plan_execution_when_git_is_available
+      capability_boundary: requires_valid_git_and_required_consent
+    subagent-driven-development:
+      activation: multi_task_implementation_when_delegation_is_authorized
+      capability_boundary: requires_platform_and_collaboration_authorization
+    dispatching-parallel-agents:
+      activation: two_or_more_independent_tasks_when_delegation_is_authorized
+      capability_boundary: requires_platform_and_collaboration_authorization
+    executing-plans:
+      activation: authorized_inline_plan_execution
+    test-driven-development:
+      activation: every_production_code_change
+    systematic-debugging:
+      activation: bug_diagnosis_or_regression
+    requesting-code-review:
+      activation: implementation_review_when_review_channel_is_available
+    receiving-code-review:
+      activation: processing_actionable_review_feedback
+    verification-before-completion:
+      activation: before_any_completion_or_success_claim
+    finishing-a-development-branch:
+      activation: finishing_implemented_work_in_valid_git_repository
+      capability_boundary: requires_valid_git_repository
+    writing-skills:
+      activation: creating_or_modifying_a_local_skill
+
+deferred:
+  - speckit-implement
+  - speckit-taskstoissues
+  - gameplay-implementation-review
+  - game-qa
+  - build-playability-review
+  - game-visual-qa
+  - game-ux-review
+  - playtest
+  - feel-pass
+  - game-feel
+  - game-ai
+  - dialogue-systems
+  - visual-novel
+  - audio-design
+  - input-systems
+  - save-systems
+  - balance-review
+  - performance-optimization
+  - phaser-core
+  - phaser-arcade-physics
+  - all-engine-specific-skills
+  - all-publishing-skills

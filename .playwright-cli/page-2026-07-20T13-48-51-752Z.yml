@@ -1,0 +1,26 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - paragraph [ref=e4]: Protótipo técnico · Etapa 1
+    - heading "Auditoria da animação idle" [level=1] [ref=e5]
+    - paragraph [ref=e6]: A divisão vertical permite conferir contornos e resíduos em fundos claro e escuro.
+  - region "Visualização da animação idle" [ref=e7]:
+    - img "Personagem animado sobre fundos claro e escuro" [ref=e8]
+    - complementary [ref=e10]:
+      - heading "Diagnóstico" [level=2] [ref=e11]
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - term [ref=e14]: FPS
+          - definition [ref=e15]: —
+        - generic [ref=e16]:
+          - term [ref=e17]: Quadro atual
+          - definition [ref=e18]: —
+        - generic [ref=e19]:
+          - term [ref=e20]: Escala
+          - definition [ref=e21]: —
+        - generic [ref=e22]:
+          - term [ref=e23]: Folha original
+          - definition [ref=e24]: 1200 × 560 px
+        - generic [ref=e25]:
+          - term [ref=e26]: Canal alfa
+          - definition [ref=e27]: RGBA confirmado
+      - paragraph [ref=e28]: Carregando spritesheet…

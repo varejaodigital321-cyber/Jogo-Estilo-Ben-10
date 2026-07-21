@@ -1,0 +1,24 @@
+{
+  "name": "prototipo-idle-jogo-2d",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js --configLoader runner",
+    "build": "node scripts/validate-assets.mjs && node node_modules/typescript/bin/tsc --noEmit && node node_modules/vite/bin/vite.js build --configLoader runner",
+    "preview": "node node_modules/vite/bin/vite.js preview --configLoader runner",
+    "validate:assets": "node scripts/validate-assets.mjs"
+  },
+  "dependencies": {
+    "howler": "^2.2.4",
+    "inkjs": "^2.4.0",
+    "phaser": "4.2.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@types/howler": "^2.2.13",
+    "axe-core": "^4.12.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
