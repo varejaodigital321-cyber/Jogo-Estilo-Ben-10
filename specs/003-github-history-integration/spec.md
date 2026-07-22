@@ -4,7 +4,7 @@
 
 **Created**: 2026-07-20
 
-**Status**: Approved — proprietário aprovou em 2026-07-20
+**Status**: Amended — proprietário autorizou preservar remoto em backup e substituir `main` pelo histórico local em 2026-07-22
 
 **Input**: Integrar o histórico remoto privado existente ao projeto local,
 preservando-o, e publicar a integração por meio de um PR em rascunho.
@@ -67,13 +67,13 @@ em rascunho direcionado a `main`, sem novo *force push* ou merge automático.
 - **FR-001**: O processo MUST associar o checkout ao repositório privado
   informado pelo proprietário somente após confirmar que ele está acessível.
 - **FR-002**: O processo MUST preservar o histórico de `main` existente no
-  GitHub e criar uma integração que também preserve o commit inicial local.
+  GitHub em uma branch de backup antes de substituir `main` pelo histórico local.
 - **FR-003**: O processo MUST parar para decisão humana caso arquivos com o
   mesmo caminho exijam resolução de conteúdo.
-- **FR-004**: O processo MUST evitar sobrescrever histórico remoto, inclusive
-  por *force push*.
-- **FR-005**: O processo MUST publicar a integração em uma branch dedicada e
-  abrir um PR em rascunho contra `main`; ele MUST NOT mesclar o PR.
+- **FR-004**: O processo MUST usar *force-with-lease* somente após confirmar o
+  hash remoto esperado e publicar uma branch de backup recuperável.
+- **FR-005**: O processo MUST publicar as branches locais de trabalho antes de
+  substituir `main`; PR em rascunho fica fora do escopo por decisão do proprietário.
 - **FR-006**: O processo MUST manter segredos de autenticação fora de arquivos,
   URLs de remoto, logs e conversas.
 
