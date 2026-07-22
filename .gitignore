@@ -2,3 +2,9 @@ node_modules/
 dist/
 *.log
 .worktrees
+
+# Graphify local output. Keep only shared graph artifacts under version control.
+graphify-out/*
+!graphify-out/graph.json
+!graphify-out/GRAPH_REPORT.md
+!graphify-out/manifest.json
