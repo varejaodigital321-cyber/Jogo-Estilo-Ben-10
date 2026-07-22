@@ -28,6 +28,14 @@ export class BootScene extends Phaser.Scene {
 
   create(): void {
     if (!this.textures.exists(PLAYER_IDLE_TEXTURE_KEY)) {
+      this.add
+        .text(48, 48, "Não foi possível carregar a arte do personagem.", {
+          color: "#ffb4ab",
+          fontFamily: "system-ui",
+          fontSize: "24px",
+          wordWrap: { width: 760 },
+        })
+        .setOrigin(0, 0);
       return;
     }
 

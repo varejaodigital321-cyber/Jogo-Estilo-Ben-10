@@ -6,3 +6,6 @@ test-results/
 
 # Graphify output is generated locally and never versioned.
 graphify-out/
+.agents/
+.claude/
+.codex/

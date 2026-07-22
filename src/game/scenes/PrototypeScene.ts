@@ -3,6 +3,7 @@ import { GAME_HEIGHT, GAME_WIDTH } from "../config";
 import {
   PLAYER_IDLE_ANIMATION_KEY,
   PLAYER_IDLE_FRAME_COUNT,
+  PLAYER_IDLE_FRAME_HEIGHT,
   PLAYER_IDLE_FRAME_RATE,
   PLAYER_IDLE_TEXTURE_KEY,
 } from "../constants/animations";
@@ -10,8 +11,6 @@ import {
 const TARGET_CHARACTER_HEIGHT = 500;
 
 type Diagnostics = {
-  fps: HTMLElement | null;
-  frame: HTMLElement | null;
   scale: HTMLElement | null;
   status: HTMLElement | null;
 };
@@ -19,7 +18,6 @@ type Diagnostics = {
 export class PrototypeScene extends Phaser.Scene {
   private player?: Phaser.GameObjects.Sprite;
   private diagnostics?: Diagnostics;
-  private lastDiagnosticsUpdate = 0;
 
   constructor() {
     super("prototype");
@@ -32,12 +30,10 @@ export class PrototypeScene extends Phaser.Scene {
     this.player = this.add
       .sprite(GAME_WIDTH / 2, GAME_HEIGHT / 2 + 8, PLAYER_IDLE_TEXTURE_KEY, 0)
       .setOrigin(0.5)
-      .setScale(TARGET_CHARACTER_HEIGHT / 560)
+      .setScale(TARGET_CHARACTER_HEIGHT / PLAYER_IDLE_FRAME_HEIGHT)
       .play(PLAYER_IDLE_ANIMATION_KEY);
 
     this.diagnostics = {
-      fps: document.querySelector("#diag-fps"),
-      frame: document.querySelector("#diag-frame"),
       scale: document.querySelector("#diag-scale"),
       status: document.querySelector("#asset-status"),
     };
@@ -48,20 +44,6 @@ export class PrototypeScene extends Phaser.Scene {
     }
     if (this.diagnostics.scale) {
       this.diagnostics.scale.textContent = `${this.player.scaleX.toFixed(3)}×`;
-    }
-  }
-
-  update(time: number): void {
-    if (!this.player || !this.diagnostics || time - this.lastDiagnosticsUpdate < 150) {
-      return;
-    }
-
-    this.lastDiagnosticsUpdate = time;
-    if (this.diagnostics.fps) {
-      this.diagnostics.fps.textContent = this.game.loop.actualFps.toFixed(0);
-    }
-    if (this.diagnostics.frame) {
-      this.diagnostics.frame.textContent = `${this.player.anims.currentFrame?.index ?? 0} / ${PLAYER_IDLE_FRAME_COUNT}`;
     }
   }
 

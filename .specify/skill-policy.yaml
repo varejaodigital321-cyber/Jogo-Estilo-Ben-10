@@ -24,25 +24,6 @@ active:
     - speckit-analyze
     - speckit-checklist
     - speckit-converge
-    - router
-    - careful
-    - guard
-  project-discovery:
-    - triage
-    - game-ideation
-    - game-direction
-    - pitch-review
-    - game-review
-    - game-eng-review
-    - plan-design-review
-    - architecture-planner
-    - game-import
-    - game-docs
-  quality-foundation:
-    - asset-review
-    - playwright-dev
-    - playwright-devops
-    - playwright-triage
   execution-discipline:
     using-superpowers:
       activation: every_task_start

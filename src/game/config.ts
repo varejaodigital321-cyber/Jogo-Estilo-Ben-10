@@ -18,7 +18,7 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   render: {
-    antialias: true,
-    pixelArt: false,
+    antialias: false,
+    pixelArt: true,
   },
 };
