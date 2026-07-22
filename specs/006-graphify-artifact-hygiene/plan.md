@@ -4,7 +4,7 @@
 
 ## Summary
 
-Stop versioning Graphify caches and derived local files while keeping the shared graph, report and manifest in Git.
+Stop versioning every Graphify output, including graph, report, manifest, cache, backup and HTML files.
 
 ## Technical Context
 
@@ -25,17 +25,16 @@ Stop versioning Graphify caches and derived local files while keeping the shared
 
 ## Design
 
-Use a root-level allowlist: ignore all content under `graphify-out/`, then unignore exactly `graph.json`, `GRAPH_REPORT.md` and `manifest.json`. Remove currently tracked Graphify paths from the index, then re-add only allowlisted artifacts. This retains shared navigation data while making caches, backups, temporary metadata and HTML visualization local.
+Ignore full `graphify-out/`. Remove every Graphify entry from Git index without deleting local files. This prevents regenerated graph data from entering future commits.
 
 ## Files
 
-- Modify: `.gitignore` — Graphify allowlist.
-- Modify: Git index for `graphify-out/` — remove generated entries; retain allowlisted files.
+- Modify: `.gitignore` — ignore full Graphify directory.
+- Modify: Git index for `graphify-out/` — remove every generated entry.
 - Create: `specs/006-graphify-artifact-hygiene/quickstart.md` — repeatable validation.
 
 ## Verification
 
-1. `git check-ignore` reports cache, backup and HTML paths ignored.
-2. `git check-ignore` reports allowlisted shared paths not ignored.
-3. `git ls-files` lists exactly three Graphify root artifacts and zero cache paths.
+1. `git check-ignore` reports cache, backup, HTML, graph, report and manifest paths ignored.
+2. `git ls-files` lists zero Graphify paths.
 4. `npm.cmd run build` succeeds unchanged.

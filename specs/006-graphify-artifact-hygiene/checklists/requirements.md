@@ -31,4 +31,4 @@
 
 ## Notes
 
-- User approved retaining only shared Graphify outputs.
+- Owner approved amendment: all Graphify outputs are local-only. Checklist rechecked 2026-07-22; no clarification markers or scope ambiguity remain.
